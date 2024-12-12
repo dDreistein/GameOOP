@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgeOfEmpires", "AgeOfEmpires\AgeOfEmpires.csproj", "{0D2719CD-9861-4631-A0F6-879AD40386EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgeOfOOP", "AgeOfOOP\AgeOfOOP.csproj", "{0D2719CD-9861-4631-A0F6-879AD40386EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

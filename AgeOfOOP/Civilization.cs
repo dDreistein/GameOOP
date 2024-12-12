@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace AgeOfEmpires;
+namespace AgeOfOOP;
 
 public abstract class Civilization(string name, Architecture architectureStyle, Wonder wonder, int offense, int defense)
 {
@@ -55,16 +55,16 @@ public abstract class Civilization(string name, Architecture architectureStyle, 
         string wonder;
         switch ((int)Wonder)
         {
-            case '0':
+            case 0:
                 wonder = "🏯";
                 break;
-            case '1':
+            case 1:
                 wonder = "🔺";
                 break;
-            case '2':
+            case 2:
                 wonder = "🏛️";
                 break;
-            case '3':
+            case 3:
                 wonder = "🏺";
                 break;
             default:
@@ -73,30 +73,37 @@ public abstract class Civilization(string name, Architecture architectureStyle, 
         }
 
         string age;
-        switch ((int)Age)
+        switch ((int) Age)
         {
-            case '0':
+            case 0:
                 age = "Stone Age";
                 break;
-            case '1':
+            case 1:
                 age = "Tool Age";
                 break;
-            case '2':
+            case 2:
                 age = "Bronze Age";
                 break;
-            case '3':
+            case 3:
                 age = "Iron Age";
                 break;
             default:
                 age = "";
                 break;
         }
+        string healthBar = new string('■', (int)Health/4 + 26);
+        healthBar += new string('□', 51-((int)Health/4 + 26));
         
         toString = $"---------------------------------------------------\n" +
-                   $"{name} {wonder}\t\t\t\t\tAge: {age}\n" +
+                   $"{name} {wonder}\tAge: {age}\n" +
                    $"---------------------------------------------------\n" +
-                   $"";
-        
+                   $"Offense: {Offense}\tDefense: {Defense}\n" +
+                   $"Health:\n" +
+                   $"                         |                         \n" +
+                   $"{healthBar}\n" +
+                   $"Population: {Population}\tUpgrade Points: {UpgradePoints}\n" +
+                   $"---------------------------------------------------\n" +
+                   $"[1] Angriff\t[2] Technologie";
         return toString;
     }
 }
