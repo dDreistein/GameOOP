@@ -15,13 +15,27 @@ public static class Display
     public static void ChooseCivilization()
     {
         Console.Clear();
-        Console.WriteLine("---------------------------------------------------\n" +
-                          "Choose your Civilization:\n" +
-                          "---------------------------------------------------\n" +
-                          "[1] Greeks\t[2] Minoans\t[3] Phoenicians\n" +
-                          "[4] Assyrians\t[5] Egyptians\t[6] Sumerians\n" +
-                          "[7] Babylonians\t[8] Hittites\t[9] Persians\n" +
-                          "[Q] Choson\t[W] Shang\t[E] Yamato\n");
-        
+        Console.Write("---------------------------------------------------\n" +
+                      "Choose your Civilization:\n" +
+                      "---------------------------------------------------\n" +
+                      "[1] Greeks\t[2] Minoans\t[3] Phoenicians\n" +
+                      "[4] Assyrians\t[5] Egyptians\t[6] Sumerians\n" +
+                      "[7] Babylonians\t[8] Hittites\t[9] Persians\n" +
+                      "[Q] Choson\t[W] Shang\t[E] Yamato\n");
+    }
+
+    public static void Civilization(Civilization civilization)
+    {
+        Console.Clear();
+        Console.Write(civilization);
+        Console.Write($"---------------------------------------------------\n" +
+                      $"[1] Attack\t[2] Upgrades\t[3] Nothing \n" +
+                      $"\t\t[0] Exit\n");
+    }
+
+    public static void Attack()
+    {
+        Console.Clear();
+        Console.Write("");
     }
 }

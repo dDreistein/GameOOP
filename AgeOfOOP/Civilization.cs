@@ -4,7 +4,7 @@ namespace AgeOfOOP;
 
 public abstract class Civilization(string name, Architecture architectureStyle, Wonder wonder, int offense, int defense)
 {
-    private string name { get; set; }  = name;
+    private string Name { get; set; }  = name;
     private Architecture ArchitectureStyle { get; set; } = architectureStyle;
     private Wonder Wonder { get; set; } = wonder;
     private int Offense { get; set; } = offense;
@@ -95,15 +95,13 @@ public abstract class Civilization(string name, Architecture architectureStyle, 
         healthBar += new string('□', 51-((int)Health/4 + 26));
         
         toString = $"---------------------------------------------------\n" +
-                   $"{name} {wonder}\tAge: {age}\n" +
+                   $"{Name} {wonder}\tAge: {age}\n" +
                    $"---------------------------------------------------\n" +
                    $"Offense: {Offense}\tDefense: {Defense}\n" +
                    $"Health:\n" +
                    $"                         |                         \n" +
                    $"{healthBar}\n" +
-                   $"Population: {Population}\tUpgrade Points: {UpgradePoints}\n" +
-                   $"---------------------------------------------------\n" +
-                   $"[1] Angriff\t[2] Technologie";
+                   $"Population: {Population}\tUP: {UpgradePoints}\n";
         return toString;
     }
 }

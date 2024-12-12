@@ -21,14 +21,72 @@ class Program
 
         if (run)
         {
-            while (run)
+            Civilization civilization = new CGreeks();
+            bool a = true;
+            while (a)
             {
-                if (Console.ReadKey().KeyChar == '0')
+                Display.ChooseCivilization();
+                switch (Console.ReadKey().KeyChar)
                 {
-                    run = false;
+                    case '1':
+                        civilization = new CGreeks();
+                        a = false;
+                        break;
+                    case '2':
+                        civilization = new CMinoans();
+                        a = false;
+                        break;
+                    case '3':
+                        civilization = new CPhoenicians();
+                        a = false;
+                        break;
+                    case '4':
+                        civilization = new CAssyrians();
+                        a = false;
+                        break;
+                    case '5':
+                        civilization = new CEgyptians();
+                        a = false;
+                        break;
+                    case '6':
+                        civilization = new CSumerians();
+                        a = false;
+                        break;
+                    case '7':
+                        civilization = new CBabylonians();
+                        a = false;
+                        break;
+                    case '8':
+                        civilization = new CHittites();
+                        a = false;
+                        break;
+                    case '9':
+                        civilization = new CPersians();
+                        a = false;
+                        break;
+                    case 'q':
+                        civilization = new CChoson();
+                        a = false;
+                        break;
+                    case 'w':
+                        civilization = new CShang();
+                        a = false;
+                        break;
+                    case 'e':
+                        civilization = new CYamato();
+                        a = false;
+                        break;
+                    default:
+                        continue;
                 }
             }
+            while (run)
+            {
+                bool b = true;
+                Display.Civilization(civilization);
+                Console.ReadKey();
+                civilization.Cycle();
+            }
         }
-        Console.ReadKey();
     }
 }
