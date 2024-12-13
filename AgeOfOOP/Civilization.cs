@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.Design;
 
 namespace AgeOfOOP;
 
@@ -12,14 +13,18 @@ public abstract class Civilization(string name, Architecture architectureStyle, 
     
     
     private Age Age { get; set; } = Age.StoneAge;
+    private int Day { get; set; } = 0;
     private int UpgradePoints { get; set; } = 100;
     private int Health { get; set; } = 0;
-    private int Population { get; set; } = 0;
+    private int Population { get; set; } = 2;
 
-    public void Cycle()
+    public bool Cycle()
     {
         Grow(Health);
         UpgradePoints += Population;
+        Health--;
+        Day++;
+        return Population > 0;
     }
     
 
@@ -95,7 +100,7 @@ public abstract class Civilization(string name, Architecture architectureStyle, 
         healthBar += new string('□', 51-((int)Health/4 + 26));
         
         toString = $"---------------------------------------------------\n" +
-                   $"{Name} {wonder}\tAge: {age}\n" +
+                   $"{Name} {wonder}\tAge: {age}\tDay: {Day}\n" +
                    $"---------------------------------------------------\n" +
                    $"Offense: {Offense}\tDefense: {Defense}\n" +
                    $"Health:\n" +

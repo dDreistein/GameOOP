@@ -80,13 +80,31 @@ class Program
                         continue;
                 }
             }
-            while (run)
+
+            do
             {
                 bool b = true;
-                Display.Civilization(civilization);
-                Console.ReadKey();
-                civilization.Cycle();
-            }
+                while (b)
+                {
+                    Display.Civilization(civilization);
+                    switch (Console.ReadKey().KeyChar)
+                    {
+                        case '1':
+                            Display.Attack();
+                            b = false;
+                            break;
+                        case '0':
+                            b = false;
+                            run = false;
+                            break;
+                        default:
+                            b = true;
+                            break;
+                    }
+                }
+            } while (civilization.Cycle());
+            Display.Extinct();
+            Console.ReadKey();
         }
     }
 }
